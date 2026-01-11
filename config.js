@@ -37,9 +37,9 @@ module.exports = {
 
   DASHBOARD: {
     enabled: false, // enable or disable dashboard
-    baseURL: "http://localhost:8080", // base url
-    failureURL: "http://localhost:8080", // failure redirect url
-    port: "8080", // port to run the bot on
+    baseURL: process.env.REPLIT_DEV_DOMAIN ? `https://${process.env.REPLIT_DEV_DOMAIN}` : "http://localhost:5000", // base url
+    failureURL: process.env.REPLIT_DEV_DOMAIN ? `https://${process.env.REPLIT_DEV_DOMAIN}` : "http://localhost:5000", // failure redirect url
+    port: process.env.PORT || "5000", // port to run the bot on
   },
 
   ECONOMY: {
